@@ -1,0 +1,281 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "API D'EXEMPLE CLARA NOEL JACQUELINE KAHOZI",
+    "version" : "1.0.0",
+    "title:API D'exemple du jeu" : null,
+    "contact" : {
+      "email" : "you@your-company.com"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "tags" : [ {
+    "name" : "admins",
+    "description" : "Secured Admin-only calls"
+  }, {
+    "name" : "developers",
+    "description" : "Operations available to regular developers"
+  } ],
+  "paths" : {
+    "/personnage" : {
+      "get" : {
+        "tags" : [ "webdev" ],
+        "summary" : null,
+        "operationId" : "voirpersonnage",
+        "description" : "Blabla a remplacer\n",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "lola",
+          "description" : "blabla a remplacer c'est juste un exemple",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "search results A TRADUIRE = AT",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/personnage"
+              }
+            }
+          },
+          "400" : {
+            "description" : "bad input parameter AT"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "admins" ],
+        "summary" : "adds an inventory item",
+        "operationId" : "addInventory",
+        "description" : "Adds an item to the system",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "Personnage",
+          "description" : "Personnage a creer",
+          "schema" : {
+            "$ref" : "#/definitions/personnage"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "item created AT"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid AT"
+          },
+          "409" : {
+            "description" : "an existing item already exists AT"
+          }
+        }
+      }
+    }
+  },
+  "/arme" : {
+    "get" : {
+      "tags" : [ "webdev" ],
+      "summary" : null,
+      "operationId" : "voirarme",
+      "description" : "Blabla a remplacer\n",
+      "produces" : [ "application/json" ],
+      "parameters" : [ {
+        "in" : "query",
+        "categorie" : "arme blanche",
+        "type" : "string"
+      } ]
+    },
+    "post" : {
+      "tags" : [ "admins" ],
+      "summary" : "adds an inventory item",
+      "operationId" : "addInventory",
+      "description" : "Adds an item to the system",
+      "consumes" : [ "application/json" ],
+      "produces" : [ "application/json" ],
+      "parameters" : [ {
+        "in" : "body",
+        "name" : "Arme",
+        "description" : "Arme a creer",
+        "schema" : {
+          "$ref" : "#/definitions/arme"
+        }
+      } ],
+      "responses" : {
+        "201" : {
+          "description" : "item created AT"
+        },
+        "400" : {
+          "description" : "invalid input, object invalid AT"
+        },
+        "409" : {
+          "description" : "an existing item already exists AT"
+        }
+      }
+    }
+  },
+  "/inventaire" : {
+    "get" : {
+      "tags" : [ "webdev" ],
+      "summary" : null,
+      "operationId" : "voirinventaire",
+      "description" : "Blabla a remplacer\n",
+      "produces" : [ "application/json" ],
+      "parameters" : [ {
+        "in" : "query",
+        "categorie" : "alimentaire et medicament",
+        "type" : "string"
+      } ]
+    },
+    "post" : {
+      "tags" : [ "admins" ],
+      "summary" : "adds an inventory item",
+      "operationId" : "addInventory",
+      "description" : "Adds an item to the system",
+      "consumes" : [ "application/json" ],
+      "produces" : [ "application/json" ],
+      "parameters" : [ {
+        "in" : "body",
+        "name" : "Inventaire",
+        "description" : "Inventaire a creer",
+        "schema" : {
+          "$ref" : "#/definitions/inventaire"
+        }
+      } ],
+      "responses" : {
+        "201" : {
+          "description" : "item created AT"
+        },
+        "400" : {
+          "description" : "invalid input, object invalid AT"
+        },
+        "409" : {
+          "description" : "an existing item already exists AT"
+        }
+      }
+    }
+  },
+  "/ennemis" : {
+    "get" : {
+      "tags" : [ "webdev" ],
+      "summary" : null,
+      "operationId" : "voirennemis",
+      "description" : "Blabla a remplacer\n",
+      "produces" : [ "application/json" ],
+      "parameters" : [ {
+        "in" : "query",
+        "name" : "MegaFort",
+        "description" : "juste un exemple",
+        "required" : false,
+        "type" : "string"
+      } ]
+    },
+    "post" : {
+      "tags" : [ "admins" ],
+      "summary" : "adds an inventory item",
+      "operationId" : "addInventory",
+      "description" : "Adds an item to the system",
+      "consumes" : [ "application/json" ],
+      "produces" : [ "application/json" ],
+      "parameters" : [ {
+        "in" : "body",
+        "name" : "Ennemis",
+        "description" : "Ennemis a creer",
+        "schema" : {
+          "$ref" : "#/definitions/ennemis"
+        }
+      } ],
+      "responses" : {
+        "201" : {
+          "description" : "item created AT"
+        },
+        "400" : {
+          "description" : "invalid input, object invalid AT"
+        },
+        "409" : {
+          "description" : "an existing item already exists AT"
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Personnage" : {
+      "type" : "object",
+      "required" : [ "id", "name", "sexe", "stat" ],
+      "properties" : {
+        "id" : {
+          "type" : "int",
+          "format" : "uuid",
+          "example" : "d290f1ee-6c54-4b01-90e6-d701748f0851"
+        },
+        "name" : {
+          "type" : "string",
+          "example" : "Lola"
+        },
+        "sexe" : {
+          "type" : "string"
+        },
+        "stat" : {
+          "type" : "int"
+        }
+      }
+    }
+  },
+  "Arme" : null,
+  "required" : "-id -categorie",
+  "properties" : {
+    "id" : {
+      "type" : "int",
+      "format" : "uuid",
+      "example" : "d290f1ee-6c54-4b01-90e6-d701748f0851"
+    }
+  },
+  "categorie" : {
+    "type" : "string",
+    "example" : "Arme blanche"
+  },
+  "Inventaire" : {
+    "required" : "-id -nom -force",
+    "properties" : {
+      "id" : {
+        "type" : "int",
+        "format" : "uuid",
+        "example" : "d290f1ee-6c54-4b01-90e6-d701748f0851"
+      },
+      "nom" : {
+        "type" : "string",
+        "example" : "Dragon"
+      },
+      "force" : {
+        "type" : "int",
+        "example" : 100
+      }
+    }
+  },
+  "Ennemis" : {
+    "required" : "-id -nom -force",
+    "properties" : {
+      "id" : {
+        "type" : "int",
+        "format" : "uuid",
+        "example" : "d290f1ee-6c54-4b01-90e6-d701748f0851"
+      },
+      "nom" : {
+        "type" : "string",
+        "example" : "Dragon"
+      },
+      "force" : {
+        "type" : "int",
+        "example" : 100
+      }
+    }
+  },
+  "host" : "virtserver.swaggerhub.com",
+  "basePath" : "/jackiehozi/jrd/1.0.0",
+  "schemes" : [ "https" ]
+}
